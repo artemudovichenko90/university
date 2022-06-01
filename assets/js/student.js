@@ -14,8 +14,8 @@ class Student extends User {
    * @param {Date} year 
    */
   set year(year) {
-    const now = new Date();
-    const limit = new Date().setFullYear(now.getFullYear() - 5);
+    const now = moment();
+    const limit = moment().subtract(5, 'year');
     if (year > now || year < limit) {
       throw new RangeError('Incorrect date')
     }
@@ -25,6 +25,6 @@ class Student extends User {
     return this._year;
   }
   get course() {
-    return new Date().getFullYear() - this.year.getFullYear();
+    return moment().diff(this.year, 'years') + 1;
   }
 }
