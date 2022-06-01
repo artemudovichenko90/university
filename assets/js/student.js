@@ -16,8 +16,6 @@ class Student extends User {
   set year(year) {
     const now = new Date();
     const limit = new Date().setFullYear(now.getFullYear() - 5);
-    console.log(now);
-    console.log(limit);
     if (year > now || year < limit) {
       throw new RangeError('Incorrect date')
     }
