@@ -16,9 +16,7 @@ class Group {
     return this._students;
   }
   showStudents() {
-    this._students.forEach(v => console.log(this.#shortFullName(v)));
+    this._students.forEach(v => console.log(v.shortFullName()));
   }
-  #shortFullName(student) {
-    return `${student.lastName} ${student.firstName[0]}.`;
-  }
+
 }

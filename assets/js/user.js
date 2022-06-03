@@ -29,4 +29,5 @@ class User {
   get fullName() {
     return this._firstName + ' ' + this._lastName;
   }
+
 }

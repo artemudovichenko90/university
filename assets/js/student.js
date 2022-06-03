@@ -27,4 +27,7 @@ class Student extends User {
   get course() {
     return moment().diff(this.year, 'years') + 1;
   }
+  shortFullName() {
+    return `${this._lastName} ${this._firstName[0]}.`;
+  }
 }
